@@ -1,0 +1,241 @@
+.sky{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
+    /* background: linear-gradient(to bottom, deepSkyBlue 20%, lightSteelBlue); */
+}
+
+/* .sun{
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  z-index: 10;
+  background: rgb(244,251,63);
+background: radial-gradient(circle, rgba(244,251,63,1) 31%, rgba(252,201,70,1) 100%);
+
+} */
+
+/* .sun::after {
+  background: radial-gradient(
+    yellow,
+    orange 27%,
+    transparent calc(27% + 3px) 100%
+  );
+} */
+
+.title-container{
+  position: relative;
+  /* top: 200px; */
+  /* margin-left: 2em; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 10;
+}
+
+.plane-container{
+  /* background-color: antiquewhite; */
+  position: absolute;
+  left: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.line{
+  width: 100px;
+  height: 1px;
+  background-color: black;
+  color: black;
+  /* border: 1px solid black; */
+}
+
+.plane{
+  width: 100px;
+}
+
+#title{
+ 
+  background-color: var(--cloud-white);
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+  animation: float 5s ease-in-out infinite;
+}
+
+#cloud-container{
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 0;
+  
+  /* background-color: azure;
+  width: 200px; */
+}
+
+.pic-hero{
+  z-index: 10;
+    /* margin-top: 10em; */
+    /* background-color: aqua; */
+    /* position: relative; */
+    /* background-color: green; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    /* max-width: 70dvw; */
+}
+
+.image-container{
+    flex: 1;
+    position: relative;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+}
+
+.profile{
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    border: 10px solid var(--cloud-white) ;
+    box-shadow: 2px 2px 10px 5px var(--cloud-white);
+}
+
+.ballons{
+  width: 250px;
+  height: 200px;
+  position: absolute;
+  top: -50%;
+}
+
+.ballons2{
+  top: -60%;
+  left: 40%;
+}
+
+.text-bio{
+    flex: 2;
+    position: relative;
+    /* background-color: green; */
+    /* display: flex;
+    justify-content: flex-start; */
+}
+
+.cloudy-paragraph{
+    line-height: 1.5;
+    /* border: 2px solid red; */
+    /* width: 50%; */
+    /* margin: 0 10em; */
+    margin-right: 10em;
+    background-color: var(--cloud-white);
+    padding: 4em;
+    border-radius: 20px;
+    z-index: 999;
+    box-shadow: 2px 2px 10px 5px var(--cloud-white);
+}
+
+
+  /* .cloudy-paragraph::after {
+      width: 60px;
+      height: 60px;
+      top: -30px;
+      right: 10%;
+      z-index: 1;
+  } */
+
+  /* Add more pseudo-elements to create more bubbles */
+  /* .cloudy-paragraph::before,
+  .cloudy-paragraph::after {
+      box-shadow:
+          -50px -20px 0 -5px #f0f0f0,
+          30px -10px 0 -5px #f0f0f0,
+          -30px 20px 0 -5px #f0f0f0,
+          50px 10px 0 -5px #f0f0f0;
+  } */
+
+  .wrapper{
+    background-color: beige;
+    width: 0px;
+    position: absolute;
+    left: 0;
+  }
+
+  .cloud {
+    background: rgba(255, 255, 255);
+    width: 300px; 
+    height: 100px;
+    border-radius: 150px;	
+    box-shadow: 10px 10px rgba(0,0,0,0.2);
+    animation-iteration-count: 1;
+  }
+  
+  .cloud:after {
+    content: '';
+    background: rgba(255, 255, 255);
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: -50px;
+    left: 50px;
+  }
+  
+  .cloud:before {
+    content: '';
+    background: rgba(255, 255, 255);
+    position: absolute;
+    width: 170px;
+    height: 150px;
+    border-radius: 50%;
+    top: -90px;
+    right: 40px;
+  }
+
+  @keyframes moveCloud {
+    0% {
+      transform: translatex(-20vw);
+    }
+    100% {
+      transform: translatex(250vw);
+    }
+  }
+
+
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+
+  @media(max-width:1500px){
+    .pic-hero{
+      flex-direction: column;
+      /* background-color: aqua; */
+    }
+
+    .cloudy-paragraph{
+      margin: 1em;
+    }
+
+    /* #title{
+      position: unset;
+      text-align: center;
+      margin-top: 2em;
+    } */
+  }
+
+  @media(max-width:726px){
+    .ballons{
+      display: none;
+    }
+  }

@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+import "../styles/home.css"
+import "../styles/sun.css"
+---
+
+<Layout title="Welcome to Astro.">
+	<div class="sun"></div>
+	<section class="moon hide">
+		<!-- Array(8) craters -->
+		<div class="crater--0"></div>
+		<div class="crater--1"></div>
+		<div class="crater--2"></div>
+		<div class="crater--3"></div>
+		<div class="crater--4"></div>
+		<div class="crater--5"></div>
+		<div class="crater--6"></div>
+		<div class="crater--7"></div>
+	</section>
+	<main>
+		<div id="cloud-container"></div>
+		<div class="sky">
+		<div class="title-container">
+			<h1 class="transition" id="title">Dallas Palumbo Web Developer</h1>
+			<div class="plane-container">
+				<div class="line"></div>
+				<img class="plane" src="/plane.png" alt="plane">
+			</div>
+		</div>
+		<div class="pic-hero">
+			<div class="image-container">
+				<img class="ballons" src="/ballons.png" alt="ballons"/>
+				<img class="profile transition" src="https://placekitten.com/400/300" alt="profile pic"/>
+			</div>
+			<div class="text-bio">
+				<img class="ballons ballons2" src="/ballons.png" alt="ballons"/>
+				<p class="cloudy-paragraph transition">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium harum nemo illum veniam repellendus magni ratione, eligendi minus, nobis dolorum ex odio facilis. Pariatur odio reiciendis velit voluptatem a ipsa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed ut nobis quo nostrum ullam deleniti adipisci molestias accusantium, qui asperiores placeat officiis quae reiciendis, exercitationem aliquid, hic accusamus? Iure, ipsum?</p>
+			</div>
+		</div>  
+	</div>
+	</main>
+</Layout>
+
+
+<script src="../scripts/scrollTrigger"></script>
+<script src="../scripts/darkmode"></script>
+
+<script>
+
+	class Cloud {
+    size: number;
+	opacity:number;
+    height: number;
+    speed: number;
+
+    constructor(size: number, opacity:number, height: number, speed: number) {
+        this.size = size;
+		this.opacity = opacity;
+        this.height = height;
+        this.speed = speed;
+    }
+
+	createDiv(): HTMLDivElement {
+        // Create a new div element
+		let main = document.querySelector("main")
+		// console.log("createing cloud")
+        const wrapperDiv = document.createElement('div');
+		
+		wrapperDiv.className = "wrapper"
+
+		
+        const cloudDiv = document.createElement('div');
+
+		wrapperDiv.appendChild(cloudDiv)
+
+        // Set the class name to 'cloud'
+        cloudDiv.className = 'cloud';
+
+        // Optionally set other styles or properties
+        wrapperDiv.style.transform = `scale(${this.size / 100})`
+		cloudDiv.style.opacity = `${this.opacity}`
+        wrapperDiv.style.top = `${this.height}px`;
+		cloudDiv.style.animation = `moveCloud ${this.speed}s linear infinite`
+		// cloudDiv.style.position = 'absolute';
+        // cloudDiv.style.transition = `transform ${this.speed}s linear`;
+
+        // Append the div to the document body or another container
+		//const cloudContainer = document.getElementById('cloud-container');
+		const cloudContainer = document.querySelector(".sky");
+        if (cloudContainer) {
+            cloudContainer.appendChild(wrapperDiv);
+        }
+
+		// console.log(cloudDiv)
+
+        return wrapperDiv;
+    }
+
+	animateDiv(cloudDiv: HTMLDivElement): void {
+        cloudDiv.style.animation = `moveCloud ${this.speed}s linear `;
+    }
+}
+
+function createClouds(){
+	for (let i = 0; i < 5; i++) { // Create 5 clouds for example
+	    const size = Math.random() * 100;
+	    const height = Math.floor(Math.random() * 1000) + 1;
+	    const speed = 20 + Math.random() * 40;
+	    const opacity = Math.random();
+
+	    const myCloud = new Cloud(size, opacity, height, speed);
+	    myCloud.createDiv();
+	}
+}
+
+createClouds();
+setTimeout(()=>{
+	createClouds()
+},5000)
+
+
+
+
+</script>
