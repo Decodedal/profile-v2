@@ -20,7 +20,7 @@
     border-radius: 50%;
     transition: opacity 2s;
     pointer-events: all;
-    z-index: 9;
+    z-index: 7;
     
     &::after,
     &::before {

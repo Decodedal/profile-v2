@@ -2,11 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import "../styles/home.css"
 import "../styles/sun.css"
+import SkillsComponent from '../react/skills';
+
 ---
 
 <Layout title="Welcome to Astro.">
 	<div class="sun"></div>
-	<section class="moon hide">
+	<div class="moon hide">
 		<!-- Array(8) craters -->
 		<div class="crater--0"></div>
 		<div class="crater--1"></div>
@@ -16,7 +18,7 @@ import "../styles/sun.css"
 		<div class="crater--5"></div>
 		<div class="crater--6"></div>
 		<div class="crater--7"></div>
-	</section>
+    </div>
 	<main>
 		<div id="cloud-container"></div>
 		<div class="sky">
@@ -30,7 +32,7 @@ import "../styles/sun.css"
 		<div class="pic-hero">
 			<div class="image-container">
 				<img class="ballons" src="/ballons.png" alt="ballons"/>
-				<img class="profile transition" src="https://placekitten.com/400/300" alt="profile pic"/>
+				<img class="profile transition" src="https://placekitten.com/300/300" alt="profile pic"/>
 			</div>
 			<div class="text-bio">
 				<img class="ballons ballons2" src="/ballons.png" alt="ballons"/>
@@ -38,12 +40,21 @@ import "../styles/sun.css"
 			</div>
 		</div>  
 	</div>
+	<div class="sky2">
+		<div class="skills-title transition">
+		<h2>My Tech Stack</h2>
+		<p>These are the tools and technologys I use in a professional day to day setting and also that i love to use to bring projects to life!</p>
+		</div>
+        <SkillsComponent client:load/>
+    </div>
 	</main>
 </Layout>
 
 
 <script src="../scripts/scrollTrigger"></script>
 <script src="../scripts/darkmode"></script>
+<script src="../scripts/stars"></script>
+
 
 <script>
 
@@ -102,15 +113,20 @@ import "../styles/sun.css"
 }
 
 function createClouds(){
+	const cloudContainer = document.querySelector(".sky");
+    if (cloudContainer) {
+        const containerHeight = cloudContainer.clientHeight;
+
 	for (let i = 0; i < 5; i++) { // Create 5 clouds for example
 	    const size = Math.random() * 100;
-	    const height = Math.floor(Math.random() * 1000) + 1;
+	    const height = Math.floor(Math.random() * containerHeight) + 1;
 	    const speed = 20 + Math.random() * 40;
 	    const opacity = Math.random();
 
 	    const myCloud = new Cloud(size, opacity, height, speed);
 	    myCloud.createDiv();
 	}
+}
 }
 
 createClouds();

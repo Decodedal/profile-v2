@@ -53,3 +53,34 @@ gsap.to(".sky", {
 //   }
 // });
 
+/**
+ * Skills container trigger and animations 
+ */
+
+gsap.set(".skill0", { x: -200, y:100 });
+gsap.set(".skill1", { y: 300 });
+gsap.set(".skill2", { x:200, y: 100 });
+gsap.set(".skill3", { x: -200, y:100 });
+gsap.set(".skill4", { y: 300 });
+gsap.set(".skill5", { x:200, y: 100 });
+gsap.set(".skill6", { x: -200, y:100 });
+gsap.set(".skill7", { y: 300 });
+gsap.set(".skill8", { x:200, y: 100 });
+
+ScrollTrigger.create({
+  trigger: ".sky2",
+  start: "top center",
+  onEnter: () => {
+    // Define animations to occur simultaneously
+    gsap.to(".skill0", { opacity: 1, y:0,x:0, duration: 1 });
+    gsap.to(".skill1", { opacity: 1, y:0,x:0, duration: 1 });
+    gsap.to(".skill2", { opacity: 1, y:0,x:0, duration: 1 });
+    gsap.to(".skill3", { opacity: 1, y:0,x:0, duration: 1, delay:1});
+    gsap.to(".skill4", { opacity: 1, y:0,x:0, duration: 1, delay:1});
+    gsap.to(".skill5", { opacity: 1, y:0,x:0, duration: 1 ,delay:1});
+    gsap.to(".skill6", { opacity: 1, y:0,x:0, duration: 1, delay:2});
+    gsap.to(".skill7", { opacity: 1, y:0,x:0, duration: 1, delay:2});
+    gsap.to(".skill8", { opacity: 1, y:0,x:0, duration: 1 ,delay:2});
+  },
+  markers: true // Optional: Adds markers to visualize the trigger points (useful for debugging)
+});

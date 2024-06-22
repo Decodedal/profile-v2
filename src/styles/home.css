@@ -7,24 +7,6 @@
     /* background: linear-gradient(to bottom, deepSkyBlue 20%, lightSteelBlue); */
 }
 
-/* .sun{
-  height: 200px;
-  width: 200px;
-  border-radius: 100%;
-  z-index: 10;
-  background: rgb(244,251,63);
-background: radial-gradient(circle, rgba(244,251,63,1) 31%, rgba(252,201,70,1) 100%);
-
-} */
-
-/* .sun::after {
-  background: radial-gradient(
-    yellow,
-    orange 27%,
-    transparent calc(27% + 3px) 100%
-  );
-} */
-
 .title-container{
   position: relative;
   /* top: 200px; */
@@ -63,6 +45,7 @@ background: radial-gradient(circle, rgba(244,251,63,1) 31%, rgba(252,201,70,1) 1
   border-radius: 10px;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
   animation: float 5s ease-in-out infinite;
+  z-index: 9;
 }
 
 #cloud-container{
@@ -194,6 +177,41 @@ background: radial-gradient(circle, rgba(244,251,63,1) 31%, rgba(252,201,70,1) 1
     right: 40px;
   }
 
+
+  .star{
+    display: block;
+    width: 3px;
+    height: 3px;
+    background-color: white;
+    border-radius: 100%;
+    /* box-shadow: 0px 0px 0px 1px white; */
+  }
+
+  .hide{
+    display: none;
+  }
+
+  .skills-title{
+    text-align: center;
+    background-color: var(--cloud-white);
+    padding: 1em 3em;
+    border-radius: 20px;
+  }
+
+  .sky2{
+    /* background-color: blueviolet; */
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    scroll-snap-align: start;
+    position: relative;
+    
+  }
+
+
+
   @keyframes moveCloud {
     0% {
       transform: translatex(-20vw);
@@ -215,6 +233,18 @@ background: radial-gradient(circle, rgba(244,251,63,1) 31%, rgba(252,201,70,1) 1
       transform: translateY(0);
     }
   }
+
+  @keyframes shining {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
   
 
   @media(max-width:1500px){
