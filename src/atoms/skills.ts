@@ -1,7 +1,8 @@
 // src/stores/skillsStore.js
 import { atom } from 'nanostores';
+import type { Skills } from '../types';
 
-export const skillsStore = atom({
+export const skillsStore = atom<Skills>({
   astro: { img: "/skills/astro.png", inSky: true },
   react: { img: "/skills/react.png", inSky: true },
   htmlCss: { img: "/skills/html-css.png", inSky: true },
