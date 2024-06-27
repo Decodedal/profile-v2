@@ -2,6 +2,7 @@ const sun = document.querySelector(".sun");
 const moon = document.querySelector(".moon");
 const transitionElements = document.querySelectorAll(".transition")
 const stars = document.querySelectorAll(".star")
+const skills = document.querySelectorAll(".skill-background")
 import { gsap } from "gsap";
 
 let lightMode = true;
@@ -20,11 +21,14 @@ if (sun && moon) {
                 document.body.classList.remove('night');
                 transitionElements.forEach(container => container.classList.remove('dark'))
                 stars.forEach(container => container.classList.add("hide"))
+                skills.forEach(container => container.classList.remove("dark-skills"))
+                
               } else {
                 // gsap.from('.moon', { x: '100%', y:"100%", duration: 1, ease: "power1" });
                 document.body.classList.add('night');
                 transitionElements.forEach(container => container.classList.add('dark'))
                 stars.forEach(container => container.classList.remove("hide"))
+                skills.forEach(container => container.classList.add("dark-skills"))
               }
         });
     });

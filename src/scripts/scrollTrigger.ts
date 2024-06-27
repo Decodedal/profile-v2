@@ -29,17 +29,17 @@ if (screenWidth >= 768) { // Check if screen width is greater than or equal to 7
 }
 
 
-gsap.to(".sky", {
-  // background:"rgb(252,176,69)",
-  scrollTrigger: {
-    trigger: ".sky",
-    pin: true,
-    start:"top top", // when the top of .pic-hero hits the top of the viewport
-    end: "+=2000", // end after scrolling 500px beyond the start
-    scrub: 1, // smooth scrubbing
-    markers: true // for development, to see the start and end points
-  }
-});
+// gsap.to(".sky", {
+//   // background:"rgb(252,176,69)",
+//   scrollTrigger: {
+//     trigger: ".sky",
+//     pin: true,
+//     start:"top top", // when the top of .pic-hero hits the top of the viewport
+//     end: "+=2000", // end after scrolling 500px beyond the start
+//     scrub: 1, // smooth scrubbing
+//     markers: true // for development, to see the start and end points
+//   }
+// });
 
 // gsap.to(".sun", {
 //   x: () => -window.innerWidth - 200, // Move to the left across the viewport

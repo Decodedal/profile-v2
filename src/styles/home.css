@@ -196,6 +196,7 @@
     background-color: var(--cloud-white);
     padding: 1em 3em;
     border-radius: 20px;
+    z-index: 999;
   }
 
   .sky2{
@@ -248,14 +249,7 @@
   
 
   @media(max-width:1500px){
-    .pic-hero{
-      flex-direction: column;
-      /* background-color: aqua; */
-    }
 
-    .cloudy-paragraph{
-      margin: 1em;
-    }
 
     /* #title{
       position: unset;
@@ -267,5 +261,14 @@
   @media(max-width:726px){
     .ballons{
       display: none;
+    }
+
+    .pic-hero{
+      flex-direction: column;
+      /* background-color: aqua; */
+    }
+
+    .cloudy-paragraph{
+      margin: 1em;
     }
   }
