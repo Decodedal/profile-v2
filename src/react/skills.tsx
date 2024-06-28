@@ -13,6 +13,7 @@ function SkillsComponent() {
     const [openSkill, setOpenSkill] = useState<SkillName | null>(null);
 
     const handleSkillNameSet = (name: SkillName) => {
+        console.log("clicked!", name)
         let currentSkill = openSkill;
         if (name === currentSkill) {
             currentSkill = null;
@@ -31,10 +32,11 @@ function SkillsComponent() {
 
                 return (
                     <div key={`${values.img}+${i}`} className={`single-skill skill${i}`}>
+                        <div className={`skill-description ${openSkill === key ? "description-show": ''}`}>test test test</div>
                         <div className="balloon"><div className="string"></div></div>
 
                         <img
-                            onClick={() => handleSkillNameSet(skillKey)}
+                            onClick={() => console.log("checkidy check check")}
                             className={`skill-img ${needsBackground.includes(skillKey) ? 'skill-background' : ''}`}
                             src={values.img}
                             style={{ animation: `float ${randomDuration} infinite`, animationDelay: `${randomDelay}` }}

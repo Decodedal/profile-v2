@@ -18,7 +18,8 @@
 }
 
 .single-skill{
-    opacity: 0;
+    /* opacity: 0; */
+    opacity: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -42,6 +43,25 @@
   background-color: var(--cloud-white);
 }
 
+.skill-description{
+  position: absolute;
+  z-index: 999;
+  background-color: var(--cloud-white);
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity transform 1s;
+}
+
+.description-show{
+  opacity: 1;
+  transform: translateX(0);
+}
 
  .balloon {
     display:inline-block;
