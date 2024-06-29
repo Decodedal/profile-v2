@@ -1,3 +1,4 @@
+
 .test{
     background-color: aqua;
     z-index: 99;
@@ -9,27 +10,25 @@
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     align-items: center;
-    /* background-color: aliceblue; */
-    /* height: 100%; */
-    /* row-gap: 10em; */
-    /* background-color:aqua; */
     width: 100%;
     z-index: 999;
 }
 
 .single-skill{
-    /* opacity: 0; */
-    opacity: 1;
+   opacity: 0;
+    // opacity: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 30px;
+    position: relative;
 }
 
 .skill-img{
     width: 250px;
     z-index: 99;
+    animation: float 5s ease-in-out infinite;
 }
 
 .skill-background{
@@ -45,7 +44,7 @@
 
 .skill-description{
   position: absolute;
-  z-index: 999;
+  z-index: 9;
   background-color: var(--cloud-white);
   width: 100%;
   height: 100%;
@@ -55,17 +54,19 @@
   align-items: center;
   opacity: 0;
   transform: translateX(-100px);
-  transition: opacity transform 1s;
+  transition: transform 1s ease, opacity 1s ease;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 .description-show{
   opacity: 1;
   transform: translateX(0);
+  z-index: 100;
 }
 
  .balloon {
     display:inline-block;
-     width:60px;
+    width:60px;
     height:85px;
     background:hsl(215,50%,65%);
     border-radius:80%;
@@ -78,7 +79,90 @@
   } 
   
 
+  .pop{
+    opacity: 0;
+  }
   
+  .pop-image{
+    width:75px;
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+  }
+
+  .pop-animation{
+    animation: popAnimation 1s forwards;
+  }
+
+  .skill-fall {
+    animation: fallingSkill 2s forwards;
+  }
+
+  .falling-wind{
+    position: absolute;
+    /* bottom: 0; */
+    opacity: 0;
+  }
+
+  .falling-wind-animation{
+    animation: fallingWindAnimation .5s forwards;
+  }
+
+  @keyframes popAnimation {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+  @keyframes fallingWindAnimation {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+  
+
+@keyframes fallingSkill {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50%{
+      transform: translateY(400px);
+    }
+    100% {
+        transform: translateY(1000px);
+        opacity: 0;
+    }
+}
+
+@keyframes floatUp {
+  0% {
+      transform: translateY(1000px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.float-up-animation {
+  animation: floatUp 1.5s forwards;
+}
 
   
   .balloon:before {
@@ -121,7 +205,22 @@
     0%,100%{ transform:translateY(0) rotate(-4deg); }
     50%{ transform:translateY(-25px) rotate(4deg); }
   }
+.restore-button{
+  position: absolute;
+  background-color: var(--cloud-white);
+  border-radius: 20px;
+  padding:10px;
+  z-index: 999;
+  top:10%;
+  cursor: pointer;
+  transition: transform .5s box-shadow .5s opacity .5s;
+}
 
+.restore-button:hover{
+  transform: scale(1.1);
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+  
 
  /* .skill-cloud{
     width: 100%;
@@ -164,6 +263,9 @@
   }
  */
 
+ .hide{
+  opacity: 0;
+ }
   
 
 @media(max-width:1024px){

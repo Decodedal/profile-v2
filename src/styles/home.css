@@ -60,10 +60,6 @@
 
 .pic-hero{
   z-index: 10;
-    /* margin-top: 10em; */
-    /* background-color: aqua; */
-    /* position: relative; */
-    /* background-color: green; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -194,7 +190,7 @@
   .skills-title{
     text-align: center;
     background-color: var(--cloud-white);
-    padding: 1em 3em;
+    padding: 10px;
     border-radius: 20px;
     z-index: 999;
   }
