@@ -1,22 +1,32 @@
+---
+const bubbles = Array.from({ length: 10 }, (_, i) => i + 1);
+---
 
 <div class="projects-title-container">
     <h4 class="projects-title">My Projects</h4>
     <div class="projects-container">
         <div class="project">
-            <img src="https://ichef.bbci.co.uk/news/480/cpsprodpb/2cfc/live/582ee2a0-359d-11ef-a044-9d4367d5b599.jpg.webp" alt="project img"/>
+            <img class="project-img" src="https://tse3.mm.bing.net/th?id=OIP.ciKPt1bpDlolx5fwTfjtHwHaE8&pid=Api&P=0&h=220" alt="project img"/>
             <img class="anchor" src="/anchor.png" alt="anchor weighting project container down">
+            <h6 class="project-title">Title</h6>
         </div>
         <div class="project">
-            <img src="https://ichef.bbci.co.uk/news/480/cpsprodpb/2cfc/live/582ee2a0-359d-11ef-a044-9d4367d5b599.jpg.webp" alt="project img"/>
+            <img class="project-img" src="https://tse3.mm.bing.net/th?id=OIP.ciKPt1bpDlolx5fwTfjtHwHaE8&pid=Api&P=0&h=220" alt="project img"/>
             <img class="anchor" src="/anchor.png" alt="anchor weighting project container down">
+            <h6 class="project-title">Title</h6>
         </div>
         <div class="project">
-            <img src="https://ichef.bbci.co.uk/news/480/cpsprodpb/2cfc/live/582ee2a0-359d-11ef-a044-9d4367d5b599.jpg.webp" alt="project img"/>
+            <img class="project-img" src="https://tse3.mm.bing.net/th?id=OIP.ciKPt1bpDlolx5fwTfjtHwHaE8&pid=Api&P=0&h=220" alt="project img"/>
             <img class="anchor" src="/anchor.png" alt="anchor weighting project container down">
+            <h6 class="project-title">Title</h6>
         </div>
         <div class="project">
-            <img src="https://ichef.bbci.co.uk/news/480/cpsprodpb/2cfc/live/582ee2a0-359d-11ef-a044-9d4367d5b599.jpg.webp" alt="project img"/>
+            <img class="project-iSmg" src="https://tse3.mm.bing.net/th?id=OIP.ciKPt1bpDlolx5fwTfjtHwHaE8&pid=Api&P=0&h=220" alt="project img"/>
             <img class="anchor" src="/anchor.png" alt="anchor weighting project container down">
+            <h6 class="project-title">Title</h6>
         </div>
     </div>
+    {bubbles.map(i => (
+        <div class={`bubble bubble-${i}`}></div>
+    ))}
 </div>

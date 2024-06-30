@@ -65,5 +65,5 @@ function createStars(divName:string) {
 }
 
 
-createStars(".sky")
-createStars(".sky2")
+// createStars(".sky")
+// createStars(".sky2")
