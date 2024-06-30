@@ -3,13 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import "../styles/home.css"
 import "../styles/sun.css"
 import SkillsComponent from '../react/skills';
-
+import "../styles/ocean.scss"
+import Projects from "../components/Projects.astro"
 ---
 
 <Layout title="Welcome to Astro.">
 	<div class="sun"></div>
 	<div class="moon hide">
-		<!-- Array(8) craters -->
 		<div class="crater--0"></div>
 		<div class="crater--1"></div>
 		<div class="crater--2"></div>
@@ -47,6 +47,12 @@ import SkillsComponent from '../react/skills';
 		</div>
         <SkillsComponent client:load/>
     </div>
+	
+	<div class="ocean">
+		<svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#071EED" fill-opacity="1" d="M0,128L48,144C96,160,192,192,288,176C384,160,480,96,576,58.7C672,21,768,11,864,32C960,53,1056,107,1152,117.3C1248,128,1344,96,1392,80L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+		<Projects/>
+	</div>
+
 	</main>
 </Layout>
 

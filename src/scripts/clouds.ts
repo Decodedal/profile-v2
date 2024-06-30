@@ -51,5 +51,5 @@ function createClouds() {
     }
 }
 
-createClouds();
+// createClouds();
 // setTimeout(createClouds, 5000);

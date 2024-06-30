@@ -1,0 +1,50 @@
+.ocean{
+    background-color: #071EED;
+    // background-color: red;
+    min-height: 100vh;
+    position: relative;
+    z-index: 9;
+}
+
+.waves{
+    position: absolute;
+    top: -200px;
+}
+
+.projects-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    row-gap: 100px;
+    align-items: center;
+    background-color: brown;
+    z-index: 10;
+}
+
+.project{
+    position: relative;
+}
+
+.anchor{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 20;
+}
+
+
+@media(max-width:768px){
+
+    .waves{
+        top: -100px;
+    }
+}
+
+@media(max-width:450px){
+
+    .waves{
+        top: -50px;
+    }
+}
+
+
