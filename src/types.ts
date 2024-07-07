@@ -4,6 +4,7 @@ export type SkillName = 'astro' | 'htmlCss' | 'typeScript' | 'node' | 'odoo' | '
 interface Skill {
     img: string;
     inSky: boolean;
+    description:string;
   }
 
 export type Skills = Record<SkillName, Skill>;

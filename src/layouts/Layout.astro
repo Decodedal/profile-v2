@@ -34,7 +34,8 @@ const { title } = Astro.props;
 			rgb(var(--accent-light)) 30%,
 			white 60%
 		);
-		--cloud-white:#F1F2ED
+		--cloud-white:#F1F2ED;
+		--off-white:"#E6E7E1";
 	}
 	html {
 		font-family: Raleway, sans-serif;
@@ -50,16 +51,29 @@ const { title } = Astro.props;
 	.dark{
 		background-color: black !important;
 	}
-
+/* 
 	body{
-		min-height: 400vh;
+		min-height: 800vh;
 		transition: all 2s;
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
 		background: rgb(45,150,253);
 		background: linear-gradient(0deg, rgba(45,150,253,1) 0%, rgba(72,205,255,1) 100%);
-	}
+		overflow-x: hidden;
+	} */
+
+	body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    background: rgb(45,150,253);
+    background: linear-gradient(0deg, rgba(45,150,253,1) 0%, rgba(72,205,255,1) 100%);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
 
 	body.night {
   		background: #0d0950;

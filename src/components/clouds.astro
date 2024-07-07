@@ -1,0 +1,68 @@
+---
+// Clouds.astro
+const numberOfClouds = 10;
+
+function generateCloudProps() {
+  return {
+    size: (Math.random() * 100).toFixed(2),
+    opacity: Math.random().toFixed(2),
+    height: (Math.random() * 100).toFixed(2),
+    speed: (20 + Math.random() * 40).toFixed(2),
+    delay: (Math.random() * 5).toFixed(2)
+  };
+}
+
+const clouds = Array.from({ length: numberOfClouds }, generateCloudProps);
+---
+
+<div class="cloud-container">
+  {clouds.map((cloud, index) => (
+    <div 
+      class={`cloud-wrapper cloud-${index + 1}`}
+      style={`
+        --size: ${cloud.size};
+        --opacity: ${cloud.opacity};
+        --height: ${cloud.height};
+        --speed: ${cloud.speed};
+        --delay: ${cloud.delay};
+      `}
+    >
+      <div class="cloud"></div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .cloud-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .cloud-wrapper {
+    position: absolute;
+    left: -300px; /* Start off-screen */
+    width: 300px; /* Adjust based on your cloud size */
+    height: 100px; /* Adjust based on your cloud size */
+    top: calc(var(--height) * 1%);
+    transform: scale(calc(var(--size) / 100));
+    opacity: var(--opacity);
+    animation: moveCloud var(--speed)s linear var(--delay)s infinite;
+  }
+
+  .cloud {
+    width: 100%;
+    height: 100%;
+    background: url('path-to-your-cloud-image.png') no-repeat center center;
+    background-size: contain;
+  }
+
+  @keyframes moveCloud {
+    from { transform: translateX(0) scale(calc(var(--size) / 100)); }
+    to { transform: translateX(calc(100vw + 300px)) scale(calc(var(--size) / 100)); }
+  }
+</style>

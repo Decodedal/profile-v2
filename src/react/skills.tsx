@@ -64,10 +64,13 @@ function SkillsComponent() {
                 };
 
                 return (
-                    <div key={`${values.img}+${i}`} className={`single-skill skill${i} ${restoredSkills.includes(skillKey) ? 'float-up-animation' : ''}`}>
+                    <div className="skill-total-container">
                         <div onClick={() => setOpenSkill(null)} className={`skill-description ${openSkill === key ? "description-show" : ''}`}>
-                            test test test
+                            <h6>{key.charAt(0).toUpperCase() + key.slice(1)}</h6>
+                            <p>{values.description}</p>
                         </div>
+                    <div key={`${values.img}+${i}`} className={`single-skill skill${i} ${restoredSkills.includes(skillKey) ? 'float-up-animation' : ''}`}>
+                        
                         <img className={`pop-image ${!values.inSky ? 'pop-animation' : ''}`} src='/pop.png' alt='cartoon pop'/>
                         <div className={`balloon ${!values.inSky ? "pop" : ""}`} onClick={() => { setInSkyFalse(skillKey); }}>
                             <div className="string"></div>
@@ -81,6 +84,7 @@ function SkillsComponent() {
                             style={style}
                         />
                         <div className="skill-cloud"></div>
+                    </div>
                     </div>
                 );
             })}

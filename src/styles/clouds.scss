@@ -1,0 +1,81 @@
+@use '../styles/utils.scss' as *;
+
+$numberOfClouds:10;
+
+@function even-distribution($index, $total, $variance) {
+    $step: calc(100% / $total);
+    $base: $index * $step;
+    $variance-value: random($variance * 2) - $variance;
+    @return $base + $variance-value;
+  }
+
+.wrapper{
+    background-color: beige;
+    width: 0px;
+    position: absolute;
+    left: 0;
+  }
+
+.cloud {
+    background: rgba(255, 255, 255);
+    width: 300px; 
+    height: 100px;
+    border-radius: 150px;	
+    box-shadow: 10px 10px rgba(0,0,0,0.2);
+    animation-iteration-count: 1;
+    position: relative;
+  }
+  
+  .cloud:after {
+    content: '';
+    background: rgba(255, 255, 255);
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: -50px;
+    left: 50px;
+  }
+  
+  .cloud:before {
+    content: '';
+    background: rgba(255, 255, 255);
+    position: absolute;
+    width: 170px;
+    height: 150px;
+    border-radius: 50%;
+    top: -90px;
+    right: 40px;
+  }
+
+
+  @for $i from 1 through $numberOfClouds{
+    .wrapper-#{$i} {
+        --speed: #{random-between(30, 80)}s;
+        --top: #{even-distribution($i, $numberOfClouds, 10)};
+        --delay: #{if($i > 5, random-between(1, 5), random-between(5, 15))}s;
+      
+      top: var(--top);
+      left:-300px;
+      animation: moveCloud var(--speed) linear var(--delay) infinite;
+    }
+
+    .cloud-#{$i}{
+        
+        
+        opacity:random-decimal();
+        transform: scale(random-decimal());
+        
+        
+    } 
+  }
+
+
+  @keyframes moveCloud {
+    from {
+         transform: translateX(0);
+        }
+    to { 
+        transform: translateX(150vw);
+     }
+  }

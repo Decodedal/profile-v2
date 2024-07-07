@@ -1,30 +1,18 @@
 ---
 const bubbles = Array.from({ length: 10 }, (_, i) => i + 1);
+import myIcon from '../../public/chain.svg';
+
+const arr = [1,1,1,1]
+
+import SingleProject from "../react/single-project.tsx"
 ---
 
 <div class="projects-title-container">
     <h4 class="projects-title">My Projects</h4>
     <div class="projects-container">
-        <div class="project">
-            <img class="project-img" src="https://tse3.mm.bing.net/th?id=OIP.ciKPt1bpDlolx5fwTfjtHwHaE8&pid=Api&P=0&h=220" alt="project img"/>
-            <img class="anchor" src="/anchor.png" alt="anchor weighting project container down">
-            <h6 class="project-title">Title</h6>
-        </div>
-        <div class="project">
-            <img class="project-img" src="https://tse3.mm.bing.net/th?id=OIP.ciKPt1bpDlolx5fwTfjtHwHaE8&pid=Api&P=0&h=220" alt="project img"/>
-            <img class="anchor" src="/anchor.png" alt="anchor weighting project container down">
-            <h6 class="project-title">Title</h6>
-        </div>
-        <div class="project">
-            <img class="project-img" src="https://tse3.mm.bing.net/th?id=OIP.ciKPt1bpDlolx5fwTfjtHwHaE8&pid=Api&P=0&h=220" alt="project img"/>
-            <img class="anchor" src="/anchor.png" alt="anchor weighting project container down">
-            <h6 class="project-title">Title</h6>
-        </div>
-        <div class="project">
-            <img class="project-iSmg" src="https://tse3.mm.bing.net/th?id=OIP.ciKPt1bpDlolx5fwTfjtHwHaE8&pid=Api&P=0&h=220" alt="project img"/>
-            <img class="anchor" src="/anchor.png" alt="anchor weighting project container down">
-            <h6 class="project-title">Title</h6>
-        </div>
+        {arr.map((_, index) => (
+            <SingleProject client:load images={["https://pics.freeartbackgrounds.com/midle/Cat_in_the_Forest_Background-1551.jpg", "data:image/jpeg;base64,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","https://www.fourpaws.com/-/media/Project/OneWeb/FourPaws/Images/articles/cat-corner/large-cat-breeds/maine-coon-cat-cropped.jpg?h=388&iar=0&w=927&hash=3ECA4FAD349C173A1FBF1752D7253D8A","https://www.fourpaws.com/-/media/Project/OneWeb/FourPaws/Images/articles/cat-corner/large-cat-breeds/bengal-cat.jpg"]} left={index%2 === 0 ? true : false}/>
+        ))}
     </div>
     {bubbles.map(i => (
         <div class={`bubble bubble-${i}`}></div>

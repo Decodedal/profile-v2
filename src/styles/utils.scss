@@ -1,0 +1,13 @@
+// _utils.scss
+@use "sass:math";
+
+@function random-between($min, $max, $precision: 0) {
+  $rand: random();
+  $random-range: $max - $min;
+  $result: $min + calc(math.floor($rand * ($random-range * math.pow(10, $precision))) / math.pow(10, $precision));
+  @return $result;
+}
+
+@function random-decimal() {
+  @return math.div(random(100), 100);
+}

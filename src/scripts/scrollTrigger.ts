@@ -57,16 +57,16 @@ if (screenWidth >= 768) { // Check if screen width is greater than or equal to 7
  * Skills container trigger and animations 
  */
 
-gsap.set(".skill0", { x: -200, y:100 });
-gsap.set(".skill1", { y: 300 });
-gsap.set(".skill2", { x:200, y: 100 });
-gsap.set(".skill3", { x: -200, y:100 });
-gsap.set(".skill4", { y: 300 });
-gsap.set(".skill5", { x:200, y: 100 });
-gsap.set(".skill6", { x: -200, y:100 });
-gsap.set(".skill7", { y: 300 });
-gsap.set(".skill8", { x:200, y: 100 });
-// gsap.set(".project",{y:500, opacity:.5})
+gsap.set(".skill0", { opacity:0, x: -200, y:100 });
+gsap.set(".skill1", { opacity:0, y: 300 });
+gsap.set(".skill2", { opacity:0, x:200, y: 100 });
+gsap.set(".skill3", { opacity:0, x: -200, y:100 });
+gsap.set(".skill4", { opacity:0, y: 300 });
+gsap.set(".skill5", { opacity:0, x:200, y: 100 });
+gsap.set(".skill6", { opacity:0, x: -200, y:100 });
+gsap.set(".skill7", { opacity:0, y: 300 });
+gsap.set(".skill8", { opacity:0, x:200, y: 100 });
+gsap.set(".single-project",{y:800, opacity:.5})
 
 ScrollTrigger.create({
   trigger: ".sky2",
@@ -83,15 +83,15 @@ ScrollTrigger.create({
     gsap.to(".skill7", { opacity: 1, y:0,x:0, duration: 1, delay:2});
     gsap.to(".skill8", { opacity: 1, y:0,x:0, duration: 1 ,delay:2});
   },
-  markers: true // Optional: Adds markers to visualize the trigger points (useful for debugging)
+  markers: false // Optional: Adds markers to visualize the trigger points (useful for debugging)
 });
 
 
-  // ScrollTrigger.create({
-  //   trigger: ".projects-container",
-  //   start: "top center",
-  //   onEnter: () => {
-  //     gsap.to(".project", { opacity: 1, y: 0, ease: "bounce.out", duration: 5 });
-  //   },
-  //   markers: true // Optional: Adds markers to visualize the trigger points (useful for debugging)
-  // });
+  ScrollTrigger.create({
+    trigger: ".projects-container",
+    start: "top center",
+    onEnter: () => {
+      gsap.to(".single-project", { opacity: 1, y: 0, ease: "bounce.out", duration: 3 });
+    },
+    markers: false // Optional: Adds markers to visualize the trigger points (useful for debugging)
+  });

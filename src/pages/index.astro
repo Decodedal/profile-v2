@@ -4,11 +4,17 @@ import "../styles/home.css"
 import "../styles/sun.css"
 import SkillsComponent from '../react/skills';
 import "../styles/ocean.scss"
+import "../styles/stars.scss"
+import "../styles/clouds.scss"
 import Projects from "../components/Projects.astro"
+
+const numberOfStars = 100;
+const stars = Array.from({ length: numberOfStars }, (_, i) => i + 1);
+const clouds = Array.from({ length: 10 }, (_, i) => i + 1);
 ---
 
 <Layout title="Welcome to Astro.">
-	<div class="sun"></div>
+	<!-- <div class="sun"></div> -->
 	<div class="moon hide">
 		<div class="crater--0"></div>
 		<div class="crater--1"></div>
@@ -22,6 +28,14 @@ import Projects from "../components/Projects.astro"
 	<main>
 		<div id="cloud-container"></div>
 		<div class="sky">
+			{stars.map(i => (
+				<div class={`star hide star-${i}`}></div>
+			))}
+			{clouds.map(i => (
+				<div class={`wrapper wrapper-${i}`}>
+					<div class={`cloud cloud-${i}`}></div>
+				</div>
+			))}
 		<div class="title-container">
 			<h1 class="transition" id="title">Dallas Palumbo Web Developer</h1>
 			<div class="plane-container">
@@ -41,6 +55,9 @@ import Projects from "../components/Projects.astro"
 		</div>  
 	</div>
 	<div class="sky2">
+		{stars.map(i => (
+			<div class={`star hide star-${i}`}></div>
+		))}
 		<div class="skills-title transition">
 		<h2>My Tech Stack</h2>
 		<p>These are the tools and technologys I use in a professional day to day setting and also that i love to use to bring projects to life!</p>
@@ -49,7 +66,8 @@ import Projects from "../components/Projects.astro"
     </div>
 	
 	<div class="ocean">
-		<svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#071EED" fill-opacity="1" d="M0,128L48,144C96,160,192,192,288,176C384,160,480,96,576,58.7C672,21,768,11,864,32C960,53,1056,107,1152,117.3C1248,128,1344,96,1392,80L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+		 <!-- <div class="wave"></div>
+		 <div class="wave"></div> -->
 		<Projects/>
 	</div>
 

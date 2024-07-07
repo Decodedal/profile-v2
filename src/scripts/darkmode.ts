@@ -3,8 +3,11 @@ const moon = document.querySelector(".moon");
 const transitionElements = document.querySelectorAll(".transition")
 const stars = document.querySelectorAll(".star")
 const skills = document.querySelectorAll(".skill-background")
-import { gsap } from "gsap";
 
+stars.forEach((star, index) => {
+  console.log(`Star ${index + 1}:`, star);
+  console.log(`Star ${index + 1} class:`, star.className);
+});
 let lightMode = true;
 
 if (sun && moon) {
