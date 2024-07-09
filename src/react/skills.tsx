@@ -1,7 +1,7 @@
 import { useStore } from '@nanostores/react';
 import { skillsStore } from '../atoms/skills';
 import "../styles/react/skills.scss";
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import type { SkillName, Skills } from "../types";
 
 interface CustomCSSProperties extends React.CSSProperties {

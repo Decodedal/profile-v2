@@ -3,7 +3,7 @@
 $numberOfClouds:10;
 
 @function even-distribution($index, $total, $variance) {
-    $step: calc(100% / $total);
+    $step: calc((100% / $total) - 2%);
     $base: $index * $step;
     $variance-value: random($variance * 2) - $variance;
     @return $base + $variance-value;

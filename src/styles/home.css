@@ -4,6 +4,8 @@
     align-items: center;
     justify-content: center;
     min-height: 100dvh;
+    overflow: hidden;
+    position: relative;
     /* background: rgb(45,150,253);
 		background: linear-gradient(0deg, rgba(45,150,253,1) 0%, rgba(72,205,255,1) 100%); */
 }
@@ -91,6 +93,13 @@
   top: -50%;
 }
 
+.ballons{
+  width: 250px;
+  height: 200px;
+  position: absolute;
+  top: -50%;
+}
+
 .ballons2{
   top: -60%;
   left: 40%;
@@ -109,9 +118,12 @@
     /* border: 2px solid red; */
     /* width: 50%; */
     /* margin: 0 10em; */
-    margin-right: 10em;
+    /* margin-right: 12em; */
+    margin-top: 3em;
+    max-width: 1000px;
+    font-size: 1.5rem;
     background-color: var(--cloud-white);
-    padding: 4em;
+    padding: 1em 2em;
     border-radius: 20px;
     z-index: 999;
     box-shadow: 2px 2px 10px 5px var(--cloud-white);
@@ -155,6 +167,7 @@
     padding: 10px;
     border-radius: 20px;
     z-index: 999;
+    margin-bottom: 3em;
   }
 
   .sky2{
@@ -166,7 +179,7 @@
     align-items: center;
     scroll-snap-align: start;
     position: relative;
-    
+    overflow: hidden;
   }
 
 

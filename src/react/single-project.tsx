@@ -3,25 +3,33 @@ import { useState } from "react"
 import "../styles/react/projects.scss"
 
 type ProjectProps = {
-    left: boolean
-    images: string[]
+    left: boolean;
+    name:string;
+    images: string[];
+    description:string,
+    links: {
+        name:string,
+        url:string
+    }[]
 }
 
 
 
-const SingleProject: FunctionComponent<ProjectProps> = ({ left, images }) => {
+const SingleProject: FunctionComponent<ProjectProps> = ({ left, images, description, links, name }) => {
 
     const [selectedImg, setSelectedImg] = useState(images[0])
 
     return (
         <div className={`single-project ${left ? "left-config" : ""}`}>
             <div className="project-description">
-                <h6>Name</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quos, eligendi iusto vel consequatur architecto ipsa minus, id beatae doloribus impedit cupiditate possimus error natus! Recusandae reprehenderit quaerat quisquam tempore?</p>
+                <h6>{name}</h6>
+                <p>{description}</p>
                 <ul>
-                    <li>link1</li>
-                    <li>link1</li>
-                    <li>link1</li>
+                   {
+                    links.map(link =>{
+                        return <a href={link.url} target="_blank"><li>{link.name}</li></a>
+                    })
+                   }
                 </ul>
             </div>
             <div className="anchor-container">

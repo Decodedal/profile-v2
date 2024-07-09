@@ -3,6 +3,21 @@
     height: auto;
 }
 
+.project-title-holder{
+    display: flex;
+    justify-content: center;
+}
+
+.projects-title{
+    color: white;
+    background-image: url("/wood-grain.webp");
+    padding: 1em;
+    font-size: 2rem;
+    border-radius: 20px;
+    animation: ocean-sway 10s ease-in-out infinite alternate;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
 .projects-container{
     display: grid;
     // grid-template-columns: repeat(2, 1fr);
@@ -23,7 +38,8 @@
 .single-project{
     display: flex;
     justify-content: space-evenly;
-    border: 2px solid yellow;
+    // border: 2px solid yellow;
+    align-items: center;
     position: relative;
     z-index: 1;
 }
@@ -38,6 +54,7 @@
   flex-basis: 500px;
   display: flex;
   flex-direction: column;
+  line-height: 1.5;
   align-items: center;
   background-color: #00FFFF;
   background-image: url("/wood-grain.webp");
@@ -49,6 +66,7 @@
     background-color: #491706;
     color: white;
     font-size: 2rem;
+    text-align: center;
 }
 
 .project-description > p{
@@ -65,22 +83,24 @@
     padding: 1em;
 }
 
-.project-description li{
-    margin: 10px 0;
+
+.project-description a{
+    color: white;
 }
 
-.project-description li:hover{
-    color: blue;
+.project-description a:hover{
+    color: red;
     cursor: pointer;
 }
 
 .anchor-container{
     position: relative;
+    animation: ocean-sway 10s ease-in-out infinite alternate;
 }
 
 .project-img-container{
     border: 10px solid #663300;
-    animation: ocean-sway 10s ease-in-out infinite alternate;
+    
     background-color: #663300;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     border-radius: 20px;
@@ -103,11 +123,15 @@
     width: 100%;
     aspect-ratio: 16 / 9; /* Adjust this ratio as needed */
     overflow: hidden;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    
 }
 
 .project-imgs{
     display: flex;
     justify-content: space-around;
+    
     // background-color: gray;
     // width: 1000px;
 
@@ -123,6 +147,7 @@
     max-height: 200px; /* Adjust this value to set the maximum height */
     transition: border .1s;
     border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 // .img-option:hover{

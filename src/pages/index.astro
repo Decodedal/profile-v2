@@ -1,12 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import "../styles/home.css"
-import "../styles/sun.css"
-import SkillsComponent from '../react/skills';
-import "../styles/ocean.scss"
-import "../styles/stars.scss"
-import "../styles/clouds.scss"
-import Projects from "../components/Projects.astro"
+import Layout from "../layouts/Layout.astro";
+import "../styles/home.css";
+import "../styles/sun.css";
+import SkillsComponent from "../react/skills";
+import "../styles/ocean.scss";
+import "../styles/stars.scss";
+import "../styles/clouds.scss";
+import Projects from "../components/Projects.astro";
 
 const numberOfStars = 100;
 const stars = Array.from({ length: numberOfStars }, (_, i) => i + 1);
@@ -14,7 +14,7 @@ const clouds = Array.from({ length: 10 }, (_, i) => i + 1);
 ---
 
 <Layout title="Welcome to Astro.">
-	<!-- <div class="sun"></div> -->
+	<div class="sun"></div>
 	<div class="moon hide">
 		<div class="crater--0"></div>
 		<div class="crater--1"></div>
@@ -24,60 +24,134 @@ const clouds = Array.from({ length: 10 }, (_, i) => i + 1);
 		<div class="crater--5"></div>
 		<div class="crater--6"></div>
 		<div class="crater--7"></div>
-    </div>
+	</div>
 	<main>
 		<!-- <div id="cloud-container"></div> -->
 		<div class="sky">
-			{stars.map(i => (
-				<div class={`star hide star-${i}`}></div>
-			))}
-			<!-- {clouds.map(i => (
-				<div class={`wrapper wrapper-${i}`}>
-					<div class={`cloud cloud-${i}`}></div>
+			{stars.map((i) => <div class={`star hide star-${i}`} />)}
+			{
+				clouds.map((i) => (
+					<div class={`wrapper wrapper-${i}`}>
+						<div class={`cloud cloud-${i}`} />
+					</div>
+				))
+			}
+			<div class="title-container">
+				<h1 class="transition" id="title">
+					Dallas Palumbo Web Developer
+				</h1>
+				<div class="plane-container">
+					<div class="line"></div>
+					<img class="plane" src="/plane.png" alt="plane" />
 				</div>
-			))} -->
-		<div class="title-container">
-			<h1 class="transition" id="title">Dallas Palumbo Web Developer</h1>
-			<div class="plane-container">
-				<div class="line"></div>
-				<img class="plane" src="/plane.png" alt="plane">
+			</div>
+			<div class="pic-hero">
+				<div class="image-container">
+					<img class="ballons" src="/ballons.png" alt="ballons" />
+					<img
+						class="profile transition"
+						src="/dallas.jpg"
+						alt="profile pic"
+					/>
+				</div>
+				<div class="text-bio">
+					<img
+						class="ballons ballons2"
+						src="/ballons.png"
+						alt="ballons"
+					/>
+					<div class="cloudy-paragraph transition">
+						<!-- <p>
+							Welcome! I'm Dallas, a software developer born and
+							raised in Queens, New York City. My journey into web
+							development began in childhood, spending countless
+							hours exploring the internet and stumbling across
+							interactive experiences that captivated my
+							imagination.
+						</p>
+						<p>
+							My passion lies in bringing web-enabled visions to
+							life, combining creativity with technical skills to
+							craft engaging digital experiences. This website is
+							not just a showcase of my skills, but also a tribute
+							to those early web adventures that sparked my
+							curiosity and ultimately led me to this career.
+						</p>
+						<p>
+							With a diverse background as a yoga instructor,
+							music teacher, and live audio professional, I've
+							cultivated a unique set of skills that enhance my
+							approach to coding. Each role has sharpened my
+							problem-solving abilities, adaptability, and
+							communication skills—attributes that prove
+							invaluable in the tech world.
+						</p>
+						<p>
+							What excites me most about software development is
+							the limitless potential to transform ideas into
+							reality. With two years of professional experience
+							under my belt, I've learned that persistence and
+							innovation are key to navigating the challenges of
+							bringing a concept to fruition.
+						</p>
+						<p>
+							This site showcases my projects and skills,
+							reflecting my commitment to continuous learning and
+							growth in the ever-evolving field of web
+							development. I'm eager to collaborate, innovate, and
+							contribute my diverse perspective to your next
+							project or team.
+						</p>
+						<p>
+							Let's connect and explore how we can create
+							something amazing together—perhaps the next web
+							experience that will inspire future developers!
+						</p> -->
+						<p>
+							Welcome! I'm Dallas, a software developer from
+							Queens, NYC. My journey began with childhood
+							adventures across the web, inspiring my passion for
+							creating engaging digital experiences.
+						</p>
+						<p>
+							With a unique background in yoga, music, and live
+							audio, I bring diverse problem-solving skills to my
+							coding. This site showcases my projects and skills,
+							reflecting two years of professional experience and
+							my commitment to growth.
+						</p>
+						<p>
+							What drives me? The limitless potential to transform
+							ideas into reality. Let's connect and create
+							something amazing together—maybe even inspire the
+							next generation of developers!
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="pic-hero">
-			<div class="image-container">
-				<img class="ballons" src="/ballons.png" alt="ballons"/>
-				<img class="profile transition" src="https://placekitten.com/300/300" alt="profile pic"/>
+		<div class="sky2">
+			{stars.map((i) => <div class={`star hide star-${i}`} />)}
+			<div class="skills-title transition">
+				<h2>My Tech Stack</h2>
+				<p>
+					These are the tools and technologys I use in a professional
+					day to day setting and also that i love to use to bring
+					projects to life!
+				</p>
 			</div>
-			<div class="text-bio">
-				<img class="ballons ballons2" src="/ballons.png" alt="ballons"/>
-				<p class="cloudy-paragraph transition">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium harum nemo illum veniam repellendus magni ratione, eligendi minus, nobis dolorum ex odio facilis. Pariatur odio reiciendis velit voluptatem a ipsa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed ut nobis quo nostrum ullam deleniti adipisci molestias accusantium, qui asperiores placeat officiis quae reiciendis, exercitationem aliquid, hic accusamus? Iure, ipsum?</p>
-			</div>
-		</div>  
-	</div>
-	<div class="sky2">
-		{stars.map(i => (
-			<div class={`star hide star-${i}`}></div>
-		))}
-		<div class="skills-title transition">
-		<h2>My Tech Stack</h2>
-		<p>These are the tools and technologys I use in a professional day to day setting and also that i love to use to bring projects to life!</p>
+			<SkillsComponent client:load />
 		</div>
-        <SkillsComponent client:load/>
-    </div>
-	
-	<div class="ocean">
-		 <div class="wave"></div>
-		 <div class="wave"></div>
-		<Projects/>
-	</div>
 
+		<div class="ocean">
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<Projects />
+		</div>
 	</main>
 </Layout>
-
 
 <script src="../scripts/scrollTrigger"></script>
 <script src="../scripts/darkmode"></script>
 <script src="../scripts/stars"></script>
 <script src="../scripts/clouds.ts"></script>
-
-

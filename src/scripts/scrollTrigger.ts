@@ -70,7 +70,7 @@ gsap.set(".single-project",{y:800, opacity:.5})
 
 ScrollTrigger.create({
   trigger: ".sky2",
-  start: "top center",
+  start: "top bottom",
   onEnter: () => {
     // Define animations to occur simultaneously
     gsap.to(".skill0", { opacity: 1, y:0,x:0, duration: 1 });
@@ -89,7 +89,7 @@ ScrollTrigger.create({
 
   ScrollTrigger.create({
     trigger: ".projects-container",
-    start: "top center",
+    start: "top bottom",
     onEnter: () => {
       gsap.to(".single-project", { opacity: 1, y: 0, ease: "bounce.out", duration: 3 });
     },

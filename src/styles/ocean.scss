@@ -55,6 +55,7 @@
     position: relative;
     z-index: 9;
     width: 100dvw;
+    // overflow-y: hidden;
 }
 
 .waves{
@@ -64,31 +65,58 @@
 
 
 
-// .bubble{
-//     // background: green;
-//     width:20px;
-//     height:20px;
-//     border:1px solid white;
-//     border-radius:100%;
-//     position:absolute;
-//     bottom:0;
-//     z-index: -1;
-//     // display: none;
-//     animation:bubble-rise 25s ease-in infinite;
-// }
+.bubble{
+    // background: green;
+    width:20px;
+    height:20px;
+    border:1px solid white;
+    border-radius:100%;
+    position:absolute;
+    bottom:0;
+    z-index: -1;
+    // display: none;
+    animation:bubble-rise 25s ease-in infinite;
+}
 
-// .bubble::after{
+.bubble::after{
+    content:"";
+    width:20%;
+    height:20%;
+    background: white;
+    position:absolute;
+    top: 20%;
+    left: 20%;
+    border-radius: 100%;
+}
+
+
+// .ocean::before {
+//   content:"";
+//     background: url("/wave.svg") repeat-x; 
+//     position: absolute;
+//     top: -198px;
+//     width: 300%;
+//     height: 198px;
+//     animation: wave 20s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+//     transform: translate3d(0, 0, 0);
+//     filter: brightness(3);
+//   }
+
+//   .ocean::after{
 //     content:"";
-//     width:20%;
-//     height:20%;
-//     background: white;
-//     position:absolute;
-//     top: 20%;
-//     left: 20%;
-//     border-radius: 100%;
-// }
+//     // background: url("/wave.svg") repeat-x; 
+//     top: -175px;
+//     animation: wave 20s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+//     // opacity: 1;
+//     background: url("/wave.svg") repeat-x; 
+//     position: absolute;
+//     // top: -198px;
+//     width: 300%;
+//     height: 198px;
+//     // animation: wave 20s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+//     transform: translate3d(0, 0, 0);
 
-
+//   }
 .wave {
     background: url("/wave.svg") repeat-x; 
     position: absolute;
@@ -167,7 +195,7 @@
         top: -55px;
         width: 100vw;
         // animation: swell 7s ease -1.25s infinite;
-        animation: none;
+        // animation: none;
         opacity: 1;
       }
 }
