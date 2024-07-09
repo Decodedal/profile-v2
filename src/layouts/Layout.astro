@@ -10,14 +10,24 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Dallas Palumbo portfolio site" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>Dallas Palumbo Web Developer</title>
+
+		<meta property="og:title" content="Dallas Palumbo Web Developer" />
+		<meta property="og:description" content="A site to showcase my skills as a developer"/>
+		<meta property="og:image" content="/products/red-barn-logo.png"/>
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://dallas-palumbo.com">
+		<meta name="twitter:card" content="summary" />
+    	<meta name="twitter:title" content="Dallas Palumbo Web Developer" />
+    	<meta name="twitter:description" content="A site to showcase my skills as a developer"/>
+    	<meta name="twitter:image" content="/dallas.jpg" />
 	</head>
 	<body>
 		<slot />
