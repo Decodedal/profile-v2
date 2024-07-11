@@ -20,7 +20,7 @@
     border-radius: 50%;
     transition: opacity 2s;
     pointer-events: all;
-    z-index: 7;
+    z-index: 1;
     
     &::after,
     &::before {
@@ -89,7 +89,7 @@
 	  right:100px;
     transition: opacity 2s;
     pointer-events: all;
-    z-index: 9;
+    z-index: 1;
 }
 
 .crater--0 {
