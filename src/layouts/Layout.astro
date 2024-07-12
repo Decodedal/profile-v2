@@ -52,14 +52,20 @@ const { title } = Astro.props;
 		/* background-size: 224px; */
 		overflow-x: hidden;
 		scroll-snap-type:y proximity;
+		scroll-behavior: smooth;
 	}
 
 	.transition{
-		transition: background-color 2s;
+		transition: all 2s;
 	}
 
 	.dark{
 		background-color: black !important;
+		color: white;
+	}
+
+	.dark-menu{
+		background-color: #512DA8 !important;
 	}
 /* 
 	body{

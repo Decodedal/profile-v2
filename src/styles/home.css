@@ -101,7 +101,7 @@
 }
 
 .ballons2{
-  top: -60%;
+  top: -20%;
   left: 40%;
 }
 
@@ -166,7 +166,7 @@
     background-color: var(--cloud-white);
     padding: 10px;
     border-radius: 20px;
-    z-index: 999;
+    z-index: 100;
     margin-bottom: 3em;
   }
 
@@ -224,5 +224,14 @@
 
     .cloudy-paragraph{
       margin: 1em;
+    }
+
+    .skills-title{
+      margin: 0 20px;
+      margin-bottom: 3em;
+    }
+
+    .title-container{
+      margin-top: 5em;
     }
   }

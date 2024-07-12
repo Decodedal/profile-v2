@@ -1,8 +1,10 @@
 import { useStore } from '@nanostores/react';
 import { skillsStore } from '../atoms/skills';
+import { themeAtom } from '../atoms/themeStore';
 import "../styles/react/skills.scss";
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 import type { SkillName, Skills } from "../types";
+
 
 interface CustomCSSProperties extends React.CSSProperties {
     '--float-duration'?: string;
@@ -10,6 +12,9 @@ interface CustomCSSProperties extends React.CSSProperties {
 }
 
 function SkillsComponent() {
+
+
+    const theme = useStore(themeAtom)
     const skills = useStore(skillsStore) as Skills;
     console.log("hello from skills page");
 
@@ -17,6 +22,7 @@ function SkillsComponent() {
 
     const [openSkill, setOpenSkill] = useState<SkillName | null>(null);
     const [restoredSkills, setRestoredSkills] = useState<SkillName[]>([]);
+    const [darkMode, setDarkmode] = useState(false)
 
     const handleSkillNameSet = (name: SkillName) => {
         console.log("clicked!", name);
@@ -50,9 +56,18 @@ function SkillsComponent() {
         }, 2000); // Match the duration of the floatUp animation
     };
 
+    useEffect(()=>{
+        if (typeof localStorage !== 'undefined') {
+            const storedTheme = localStorage.getItem('theme');
+            if (storedTheme) {
+            setDarkmode(storedTheme === 'dark')
+            } 
+          }
+    },[])
+
     return (
         <div className="skills-container">
-            <p onClick={() => resetSkillsInSky()} className={`restore-button ${Object.values(skills).every(skill =>(skill.inSky))? 'hide' :''}`}>Restore Skills</p>
+            <p onClick={() => resetSkillsInSky()} className={`restore-button ${theme === 'dark' ? 'dark-descriptions' : ''} ${Object.values(skills).every(skill =>(skill.inSky))? 'hide' :''}`}>Restore Skills</p>
             {Object.entries(skills).map(([key, values], i) => {
                 const skillKey = key as SkillName;
                 const randomDelay = `${((Math.random() * 10) + 5).toFixed(1)}s`;
@@ -65,7 +80,7 @@ function SkillsComponent() {
 
                 return (
                     <div className="skill-total-container">
-                        <div onClick={() => setOpenSkill(null)} className={`skill-description ${openSkill === key ? "description-show" : ''}`}>
+                        <div onClick={() => setOpenSkill(null)} className={`skill-description ${openSkill === key ? "description-show" : ''}  ${theme === 'dark' ? 'dark-descriptions' : ''}`}>
                             <h6>{key.charAt(0).toUpperCase() + key.slice(1)}</h6>
                             <p>{values.description}</p>
                         </div>

@@ -1,0 +1,158 @@
+<div class="hamburger">
+    <img id="hamburger" src="/burger-white.svg" alt="hamburger icon" />
+    <div class="menu">
+        <div class="inner-menu-display">
+            <div class="label">
+                <p>Dark Mode</p>
+                <div class="day-night">
+                    <img class="icon" src="/sun.svg" />
+                    <label class="switch">
+                        <input id="mode-switch" type="checkbox" />
+                        <span class="slider round"></span>
+                    </label>
+                    <img class="icon" src="/moon.svg" />
+                </div>
+            </div>
+            <a class="transition" href="#about">About me</a>
+            <a class="transition" href="#skills">Skills</a>
+            <a class="transition" href="#projects">Projects</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    #hamburger {
+        width: 50px;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+    }
+
+    .menu {
+        width: 0;
+        background-color: lightblue;
+        height: 100vh;
+        position: fixed;
+        z-index: 999;
+        transition: width 0.5s ease-in;
+        overflow: hidden;
+    }
+
+    .inner-menu-display {
+        /* background-color: aqua; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10em;
+        height: 50vh;
+        justify-content: space-around;
+    }
+
+    .inner-menu-display > a {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .open-menu {
+        width: 300px;
+    }
+
+    .day-night {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .icon {
+        width: 20px;
+    }
+
+    .label{
+        text-align: center;
+    }
+
+    /* The switch - the box around the slider */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    /* The slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+    }
+
+    input:checked + .slider {
+        background-color: #000000;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #000000;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    @media(max-width:726px){
+        .open-menu{
+            width: 100dvw;
+        }
+    }
+
+</style>
+
+<script>
+    const menu = document.querySelector(".menu");
+    const hamburger = document.querySelector("#hamburger");
+
+    hamburger?.addEventListener("click", () => {
+        console.log("clicked");
+        menu?.classList.toggle("open-menu");
+    });
+</script>

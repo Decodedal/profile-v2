@@ -7,6 +7,7 @@ import "../styles/ocean.scss";
 import "../styles/stars.scss";
 import "../styles/clouds.scss";
 import Projects from "../components/Projects.astro";
+import Nav from "../components/nav.astro"
 
 const numberOfStars = 100;
 const stars = Array.from({ length: numberOfStars }, (_, i) => i + 1);
@@ -14,6 +15,7 @@ const clouds = Array.from({ length: 10 }, (_, i) => i + 1);
 ---
 
 <Layout title="Welcome to Astro.">
+	<Nav/>
 	<div class="sun"></div>
 	<div class="moon hide">
 		<div class="crater--0"></div>
@@ -27,7 +29,7 @@ const clouds = Array.from({ length: 10 }, (_, i) => i + 1);
 	</div>
 	<main>
 		<!-- <div id="cloud-container"></div> -->
-		<div class="sky">
+		<div class="sky" id="about">
 			{stars.map((i) => <div class={`star hide star-${i}`} />)}
 			{
 				clouds.map((i) => (
@@ -133,7 +135,7 @@ const clouds = Array.from({ length: 10 }, (_, i) => i + 1);
 		<div class="sky2">
 			{stars.map((i) => <div class={`star hide star-${i}`} />)}
 			<div class="skills-title transition">
-				<h2>My Tech Stack</h2>
+				<h2 id="skills">My Tech Stack</h2>
 				<p>
 					These are the tools and technologys I use in a professional
 					day to day setting and also that i love to use to bring

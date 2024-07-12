@@ -241,11 +241,11 @@
     50%{ transform:translateY(-25px) rotate(4deg); }
   }
 .restore-button{
-  position: absolute;
+  position: fixed;
   background-color: var(--cloud-white);
   border-radius: 20px;
   padding:10px;
-  z-index: 999;
+  z-index: 20;
   top:10%;
   cursor: pointer;
   transition: transform .5s box-shadow .5s opacity .5s;
