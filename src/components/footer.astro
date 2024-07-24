@@ -1,0 +1,214 @@
+<div class="outerFooter">
+    <div class="innerFooter" id="contact">
+        <svg
+            id="sand-wave"
+            style="transform:rotate(0deg); transition: 0.3s"
+            viewBox="0 0 1440 100"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            ><defs
+                ><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"
+                    ><stop stop-color="rgba(113, 86, 43, 1)" offset="0%"
+                    ></stop><stop
+                        stop-color="rgba(191.57, 131.901, 0, 1)"
+                        offset="100%"></stop></linearGradient
+                ></defs
+            ><path
+                style="transform:translate(0, 0px); opacity:1"
+                fill="url(#sw-gradient-0)"
+                d="M0,0L48,10C96,20,192,40,288,50C384,60,480,60,576,51.7C672,43,768,27,864,25C960,23,1056,37,1152,41.7C1248,47,1344,43,1440,36.7C1536,30,1632,20,1728,13.3C1824,7,1920,3,2016,13.3C2112,23,2208,47,2304,48.3C2400,50,2496,30,2592,21.7C2688,13,2784,17,2880,16.7C2976,17,3072,13,3168,16.7C3264,20,3360,30,3456,31.7C3552,33,3648,27,3744,31.7C3840,37,3936,53,4032,58.3C4128,63,4224,57,4320,56.7C4416,57,4512,63,4608,60C4704,57,4800,43,4896,40C4992,37,5088,43,5184,38.3C5280,33,5376,17,5472,15C5568,13,5664,27,5760,30C5856,33,5952,27,6048,21.7C6144,17,6240,13,6336,16.7C6432,20,6528,30,6624,40C6720,50,6816,60,6864,65L6912,70L6912,100L6864,100C6816,100,6720,100,6624,100C6528,100,6432,100,6336,100C6240,100,6144,100,6048,100C5952,100,5856,100,5760,100C5664,100,5568,100,5472,100C5376,100,5280,100,5184,100C5088,100,4992,100,4896,100C4800,100,4704,100,4608,100C4512,100,4416,100,4320,100C4224,100,4128,100,4032,100C3936,100,3840,100,3744,100C3648,100,3552,100,3456,100C3360,100,3264,100,3168,100C3072,100,2976,100,2880,100C2784,100,2688,100,2592,100C2496,100,2400,100,2304,100C2208,100,2112,100,2016,100C1920,100,1824,100,1728,100C1632,100,1536,100,1440,100C1344,100,1248,100,1152,100C1056,100,960,100,864,100C768,100,672,100,576,100C480,100,384,100,288,100C192,100,96,100,48,100L0,100Z"
+            ></path></svg
+        >
+        <div class="footer-contact-info">
+            <div class="contact">
+                <div id="get-in-touch">
+                    <h6>Get In touch with me!</h6>
+                    <p>
+                        Filling out this form will Send me an email and I am
+                        sure to get back to you promptly
+                    </p>
+                </div>
+                <form class="my-form" action="https://fabform.io/f/HfaKvRt" method="post">
+                    <div class="question-line">
+                        <div class="question">
+                            <label for="name">Name:</label>
+                            <input type="text" name="name" required />
+                        </div>
+                        <div class="question">
+                            <label for="subject">Subject:</label>
+                            <input type="text" name="subject" required />
+                        </div>
+                    </div>
+                    <div class="question-line">
+                        <div class="question">
+                            <label for="phone">Your Phone:</label>
+                            <input type="text" name="phone"/>
+                        </div>
+                        <div class="question">
+                            <label for="email">Your Email:</label>
+                            <input type="text" name="email" />
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label for="message">Message:</label>
+                        <textarea name="message" required></textarea>
+                    </div>
+                    <button id="submit" type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="info">
+                <a target="_blank" href="https://www.linkedin.com/in/dallas-palumbo/"><p>Linked In</p></a>
+                <a target="_blank" href="https://github.com/Decodedal"><p>GitHub</p></a>
+                <a target="_blank" href="/Dallas_Palumbo_resume.pdf"><p>My Resume</p></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .outerFooter {
+        /* background-color: #8D6D34;
+        height: 100px;
+        padding-top: 5em; */
+        /* z-index: 1000; */
+    }
+
+    .innerFooter {
+        background-color: #71562b;
+        position: relative;
+        color: #fff;
+        z-index: 100;
+        /* padding: 10em; */
+    }
+
+    .sand-wave {
+        position: absolute;
+        top: 0;
+    }
+
+    .footer-contact-info {
+        display: flex;
+        /* background-color: blue; */
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .contact {
+        display: flex;
+        /* flex-direction: column; */
+        align-items: center;
+        /* gap: 20px; */
+        padding: 1em;
+        /* background-color: aqua; */
+        gap: 4em;
+        flex-wrap: wrap;
+    }
+
+    .question {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .question > label{
+        font-weight: 600;
+    }
+
+    .question > input,
+    textarea {
+        padding: 1em;
+        border-radius: 5px;
+        box-shadow: inset 0 0 0 1px rgb(226, 226, 226);
+    }
+
+    #get-in-touch > h6 {
+        font-size: 2rem;
+        /* background-color:aqua ; */
+        padding: none;
+        margin: 0;
+    }
+
+    #get-in-touch {
+        display: flex;
+        flex-direction: column;
+        background-color: #a58044;
+        padding: 1em;
+        border-radius: 20px;
+    }
+
+    .my-form {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        flex-direction: column;
+        background-color: #a58044;
+        padding: 1em;
+        border-radius: 20px;
+    }
+
+    .question-line{
+        display: flex;
+        gap:30px
+    }
+
+    #submit{
+        align-self: center;
+        padding: 10px;
+        border-radius: 20px;
+        padding: 1em;
+        font-weight: 600;
+        background-color: #fff;
+        transition:all 1s;
+    }
+
+    #submit:hover{
+        cursor: pointer;
+        border-radius: 0px;
+        transform: scale(1.1);
+    }
+
+    .info{
+        background-color: #fff;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        background-color: #a58044;
+        padding: 1em;
+        border-radius: 20px;
+    }
+
+    .info > a{
+        color: white;
+        text-decoration: none;
+        font-size: 2rem;
+        transition: all .4s;
+    }
+    
+    .info > a:hover{
+        color: lightblue;
+        text-decoration: underline;
+        font-size: 2rem;
+    }
+
+    @media(max-width:1024px){
+        .contact{
+            flex-direction: column;
+        }
+
+        .footer-contact-info{
+            flex-direction: column;
+        }
+
+        .info{
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .question-line{
+            flex-wrap: wrap;
+        }
+        .question{
+            width: 100%;
+        }
+    }
+</style>

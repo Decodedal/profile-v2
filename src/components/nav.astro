@@ -13,9 +13,10 @@
                     <img class="icon" src="/moon.svg" />
                 </div>
             </div>
-            <a class="transition" href="#about">About me</a>
-            <a class="transition" href="#skills">Skills</a>
-            <a class="transition" href="#projects">Projects</a>
+            <a class="transition nav-link" href="#about">About me</a>
+            <a class="transition nav-link" href="#skills">Skills</a>
+            <a class="transition nav-link" href="#projects">Projects</a>
+            <a class="transition nav-link" href="#contact">Contact Me</a>
         </div>
     </div>
 </div>
@@ -72,7 +73,7 @@
         width: 20px;
     }
 
-    .label{
+    .label {
         text-align: center;
     }
 
@@ -139,20 +140,31 @@
         border-radius: 50%;
     }
 
-    @media(max-width:726px){
-        .open-menu{
+    @media (max-width: 726px) {
+        .open-menu {
             width: 100dvw;
         }
     }
-
 </style>
 
 <script>
     const menu = document.querySelector(".menu");
     const hamburger = document.querySelector("#hamburger");
+    const buttons = document.querySelectorAll(".nav-link")
+
+    const screenWidth = window.screen.width;
+    console.log("Screen width:", screenWidth);
 
     hamburger?.addEventListener("click", () => {
         console.log("clicked");
         menu?.classList.toggle("open-menu");
     });
+
+    if(screenWidth < 726){
+        buttons.forEach(button => {
+            button.addEventListener("click",() =>{
+                menu?.classList.remove("open-menu");
+            })
+        })
+    }
 </script>

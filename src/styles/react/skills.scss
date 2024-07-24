@@ -46,6 +46,7 @@
     position: relative;
     z-index: 15;
     animation: float 5s ease-in-out infinite;
+    cursor: pointer;
 }
 
 .skill-background{
@@ -53,7 +54,9 @@
     padding:10px;
     border-radius: 20px;
     transition: background-color 2s;
+    cursor: pointer;
 }
+
 
 .dark-skills{
   background-color: var(--cloud-white);
@@ -78,7 +81,8 @@
   flex-direction: column;
   top: 0;
   left: 0;
-  background-color: #E6E7E1;;
+  background-color: #E6E7E1;
+  cursor: pointer;
 }
 
 .skill-description >h6{
@@ -102,6 +106,7 @@
   border: 2px solid green;
 }
 
+
  .balloon {
     display:inline-block;
     width:60px;
@@ -115,10 +120,19 @@
     /* animation:balloons 4s ease-in-out infinite; */
     transform-origin:bottom center;
   } 
+
+  .balloon:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+  }
   
 
   .pop{
     opacity: 0;
+  }
+
+  .pop:hover:hover{
+    cursor: default;
   }
   
   .pop-image{
@@ -134,6 +148,7 @@
 
   .skill-fall {
     animation: fallingSkill 2s forwards;
+    cursor:auto;
   }
 
   .falling-wind{

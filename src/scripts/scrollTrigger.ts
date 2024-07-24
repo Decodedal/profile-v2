@@ -66,7 +66,7 @@ gsap.set(".skill5", { opacity:0, x:200, y: 100 });
 gsap.set(".skill6", { opacity:0, x: -200, y:100 });
 gsap.set(".skill7", { opacity:0, y: 300 });
 gsap.set(".skill8", { opacity:0, x:200, y: 100 });
-gsap.set(".single-project",{y:800, opacity:.5})
+gsap.set(".single-project",{y:800, opacity:.5, display:"none"})
 
 ScrollTrigger.create({
   trigger: ".sky2",
@@ -91,7 +91,7 @@ ScrollTrigger.create({
     trigger: ".projects-container",
     start: "top bottom",
     onEnter: () => {
-      gsap.to(".single-project", { opacity: 1, y: 0, ease: "bounce.out", duration: 3 });
+      gsap.to(".single-project", { display:'flex', opacity: 1, y: 0, ease: "bounce.out", duration: 3 });
     },
     markers: false // Optional: Adds markers to visualize the trigger points (useful for debugging)
   });

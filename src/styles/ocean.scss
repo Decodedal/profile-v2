@@ -189,6 +189,7 @@
 
     .projects-container{
         grid-template-columns: repeat(1, 1fr);
+        overflow-y: hidden;
     }
 
     .wave:nth-of-type(2) {
@@ -197,6 +198,10 @@
         // animation: swell 7s ease -1.25s infinite;
         // animation: none;
         opacity: 1;
+      }
+
+      .projects-container{
+        margin-bottom: 5em;
       }
 }
 
