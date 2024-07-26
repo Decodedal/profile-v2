@@ -38,7 +38,7 @@ class Star {
             cloudContainer.appendChild(starDiv);
         }
 
-		// console.log(cloudDiv)
+		// //console.log(cloudDiv)
 
         return starDiv;
     }

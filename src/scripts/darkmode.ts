@@ -9,7 +9,7 @@ const descriptions = document.querySelectorAll(".skill-description");
 const modeSwitch = document.querySelector("#mode-switch") as HTMLInputElement;
 const menu = document.querySelector(".menu")
 
-console.log(menu)
+//console.log(menu)
 
 let lightMode = true;
 

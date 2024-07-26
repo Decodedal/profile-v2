@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-console.log("Scroll trigger")
+//console.log("Scroll trigger")
 
 const screenWidth = window.innerWidth;
 
@@ -13,7 +13,7 @@ function resetTitleLayout() {
     gsap.set('.title-container', { clearProps: 'all' });
   }
 
-console.log(screenWidth)
+//console.log(screenWidth)
 
 
 if (screenWidth >= 768) { // Check if screen width is greater than or equal to 768px (desktop)

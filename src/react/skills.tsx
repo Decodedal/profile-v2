@@ -16,7 +16,7 @@ function SkillsComponent() {
 
     const theme = useStore(themeAtom)
     const skills = useStore(skillsStore) as Skills;
-    console.log("hello from skills page");
+    //console.log("hello from skills page");
 
     const needsBackground: SkillName[] = ["astro", "react", "sql", "node", "odoo", "sass", "htmlCss"];
 
@@ -25,7 +25,7 @@ function SkillsComponent() {
     const [darkMode, setDarkmode] = useState(false)
 
     const handleSkillNameSet = (name: SkillName) => {
-        console.log("clicked!", name);
+        //console.log("clicked!", name);
         let currentSkill = openSkill;
         if (name === currentSkill) {
             currentSkill = null;
@@ -80,7 +80,7 @@ function SkillsComponent() {
 
                 return (
                     <div className="skill-total-container">
-                        <div onClick={() => setOpenSkill(null)} className={`skill-description ${openSkill === key ? "description-show" : ''}  ${theme === 'dark' ? 'dark-descriptions' : ''}`}>
+                        <div onClick={() => setOpenSkill(null)} className={`${i % 2 === 0 ? "even" : "odd"} skill-description ${openSkill === key ? "description-show" : ''}  ${theme === 'dark' ? 'dark-descriptions' : ''}`}>
                             <h6>{key.charAt(0).toUpperCase() + key.slice(1)}</h6>
                             <p>{values.description}</p>
                         </div>
